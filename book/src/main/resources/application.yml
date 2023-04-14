@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    username: root
+    password: 1234
+    url: mysql:jdbc://localhost:3306/frog?serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
