@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--配置组件扫描器，告诉Spring去哪些包扫描注解。不配置则会报404错误。-->
+    <context:component-scan base-package="com.book"/>
+
+    <!--在当前WEB项目中，使用注解来创建控制器，而不是使用Servlet。-->
+    <mvc:annotation-driven/>
+    <mvc:default-servlet-handler/>
+
+    <!--  将jsp配置到web-info下面的配置，前后端分离项目中不用此配置。-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          id="internalResourceViewResolver">
+        <!--前缀-->
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <!--后缀，可以为空。-->
+        <!--<property name="suffix" value=".jsp"/>-->
+    </bean>
+</beans>
