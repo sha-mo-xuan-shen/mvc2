@@ -11,7 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 public class ProjectInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        System.out.println("pre");
+        String contentType = request.getHeader("content-Type");
+        System.out.println("pre"+contentType);
         return true;
     }
 
